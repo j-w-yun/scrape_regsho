@@ -1,6 +1,6 @@
 # scrape_regsho
 
-Scrapes daily short sale volumes of all Nasdaq and NYSE stocks from 3/1/2011 to present.
+Scrapes daily short sale volumes of all Nasdaq and NYSE stocks from 3/1/2011 to the present.
 
 Dependencies
 ```

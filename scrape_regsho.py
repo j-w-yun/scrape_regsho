@@ -63,6 +63,12 @@ def get_data(date):
 		datum = datum.dropna()
 		data.append(datum)
 	data = pd.concat(data)
+
+	# Check stock market is closed
+	for col in FIELDNAMES:
+		if col not in data:
+			return None
+
 	data = data[FIELDNAMES]
 
 	# Append data to csv
@@ -91,6 +97,9 @@ if __name__ == '__main__':
 
 	for date in dates:
 		# Get data
-		get_data(date)
+		data = get_data(date)
 
-		print('Fetched {}'.format(date))
+		if data is None:
+			print('Closed {}'.format(date))
+		else:
+			print('Fetched {}'.format(date))
